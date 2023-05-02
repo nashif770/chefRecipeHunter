@@ -1,9 +1,12 @@
 import React from "react";
+import Navigation from "../../../Layout/NavigationBar";
+import { Navbar } from "react-bootstrap";
+import NavigationBar from "../../../Layout/NavigationBar";
 
 const Header = () => {
   return (
     <div>
-        <h3>This is Header</h3>
+      <NavigationBar></NavigationBar>
     </div>
   );
 };

@@ -1,10 +1,13 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
 const FeaturedChef = () => {
+  const {id} = useParams();
   return (
-    <div>
-      <h3>See our Featured Chefs</h3>
-    </div>
+    <Container>
+      <h3>See our Featured Chefs: {id}</h3>
+    </Container>
   );
 };
 
