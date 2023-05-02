@@ -4,25 +4,31 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Register = () => {
-  const {createUser} = useContext(AuthContext);
+  const { createUser, userUpdate } = useContext(AuthContext);
 
-  
-
-  const handleRegister =(event)=>{
+  const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name= form.name.value;
+    const name = form.name.value;
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
 
     createUser(email, password)
-    .then(result =>{
-      const createdUser = result.user;
-      console.log(createdUser)
-    })
-    .catch(error => console.log(error))
-  }
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+      })
+      .catch((error) => console.log(error));
+
+    userUpdate(name, photo)
+      .then(() => {
+        console.log("profile Updated");
+      })
+      .catch((error) => {
+        // console.log(error);
+      });
+  };
 
   return (
     <Container className="w-25 mx- mt-4 bg-white p-3 rounded">
@@ -70,7 +76,6 @@ const Register = () => {
 
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check
-            
             type="checkbox"
             name="accept"
             label={

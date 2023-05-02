@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Login = () => {
+
+  // const [error, setError] = useState({})
+  
+  const {signInUser} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location?.state?.from?.pathname || '/';
+
   const handleLogin =(event) => {
     event.preventDefault();
     const form = event.target;
@@ -10,6 +20,13 @@ const Login = () => {
     const password = form.password.value;
 
     console.log(email, password)
+
+    signInUser(email, password)
+    .then(result =>{
+      console.log(result.user)
+      navigate(from)
+    })
+    .catch(error=> console.log(error))
   }
   return (
     <Container className="w-25 mx- mt-4 bg-white p-3 rounded">
@@ -55,7 +72,8 @@ const Login = () => {
         </Form.Text>
         <br></br>
         <Form.Text className="text-danger">
-          We'll never share your email with anyone else.
+
+          sdas
         </Form.Text>
       </Form>
     </Container>

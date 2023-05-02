@@ -6,7 +6,13 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const NavigationBar = () => {
 
-  const {user} = useContext(AuthContext)
+  const {user, logOut} = useContext(AuthContext);
+
+  // const photo = user.photoURL;
+
+  const handleLogOut = () =>{
+    logOut();
+  }
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -19,10 +25,14 @@ const NavigationBar = () => {
             <Link className="mx-3 text-decoration-none text-white" to="/recipe">Recipe</Link>
             <Link className="mx-3 text-decoration-none text-white" to="/blog">Blog</Link>
             { user &&
-              <Link className="mx-3 text-decoration-none text-white" to="#memes">{user.displayName}</Link>}
+              <div>
+                <Link className="mx-3 text-decoration-none text-white" to="#memes">{user.displayName}</Link>
+                {/* <img src={photo} alt=""/> */}
+              </div>
+              }
             { user ?
-              <Link className="mx-3 text-decoration-none text-white" to="/login"><Button className="bg-white text-black">Logout</Button></Link>:
-              <Link className="mx-3 text-decoration-none text-white"><Button className="bg-white text-black">Login</Button></Link>
+              <Link className="mx-3 text-decoration-none text-white" to="/login"><Button className="bg-white text-black" onClick={handleLogOut}>Logout</Button></Link>:
+              <Link to='./login' className="mx-3 text-decoration-none text-white"><Button className="bg-white text-black">Login</Button></Link>
 
               }
           </Nav>
