@@ -7,7 +7,7 @@ const Recipe = () => {
     console.log(recipe)
     return (
         <Container>
-            <h1>The Recipes: {recipe.length}</h1>
+            <h1>Checkout All Our Recipes: {recipe.length}</h1>
         </Container>
     );
 };

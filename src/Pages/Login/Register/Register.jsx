@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Register = () => {
+  const {createUser} = useContext(AuthContext);
+
+  
+
+  const handleRegister =(event)=>{
+    event.preventDefault();
+    const form = event.target;
+    const name= form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+    .then(result =>{
+      const createdUser = result.user;
+      console.log(createdUser)
+    })
+    .catch(error => console.log(error))
+  }
+
   return (
     <Container className="w-25 mx- mt-4 bg-white p-3 rounded">
       <h3>Please Register</h3>
-      <Form>
+      <Form onSubmit={handleRegister}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>name address</Form.Label>
+          <Form.Label>name</Form.Label>
           <Form.Control
             type="text"
             name="name"
@@ -18,7 +39,7 @@ const Register = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>photo address</Form.Label>
+          <Form.Label>photo</Form.Label>
           <Form.Control
             type="text"
             name="photo"
@@ -28,7 +49,7 @@ const Register = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
             name="email"

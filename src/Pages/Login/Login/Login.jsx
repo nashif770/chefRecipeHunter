@@ -3,10 +3,18 @@ import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const handleLogin =(event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(email, password)
+  }
   return (
     <Container className="w-25 mx- mt-4 bg-white p-3 rounded">
       <h3>Please Login</h3>
-      <Form>
+      <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
