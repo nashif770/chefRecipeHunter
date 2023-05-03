@@ -8,7 +8,7 @@ import NavigationBar from './NavigationBar';
 
 const Main = () => {
     return (
-        <Container className='bg-secondary'>
+        <Container>
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
