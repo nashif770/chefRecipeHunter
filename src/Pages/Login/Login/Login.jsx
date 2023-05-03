@@ -7,11 +7,31 @@ const Login = () => {
 
   // const [error, setError] = useState({})
   
-  const {signInUser} = useContext(AuthContext);
+  const {signInUser, googleSigner, gitSigner} = useContext(AuthContext);
+
+
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location?.state?.from?.pathname || '/';
+
+  const handleGoogleLogin = () =>{
+    console.log("goog");
+    googleSigner()
+    .then(result =>{
+      console.log(result)
+    })
+    .catch(error => {console.log(error)})
+  }
+
+  const handleGitLogin = () =>{
+    console.log("git");
+    gitSigner()
+    .then(result =>{
+      console.log(result)
+    })
+    .catch(error => {console.log(error)})
+  }
 
   const handleLogin =(event) => {
     event.preventDefault();
@@ -56,10 +76,10 @@ const Login = () => {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button className="w-100 mt-2" variant="primary" type="submit">
           Submit
         </Button>
-        <br></br>
+        <p className="m-0 m-2 text-center">Or</p>
 
         <Form.Text className="text-secondary">
           Don't have an account?
@@ -76,6 +96,12 @@ const Login = () => {
           sdas
         </Form.Text>
       </Form>
+        <Button onClick={handleGoogleLogin} className="w-100 mt-2" variant="primary" type="submit">
+          Login with Google
+        </Button>
+        <Button onClick={handleGitLogin} className="w-100 mt-2" variant="primary" type="submit">
+          Login with GitHub
+        </Button>
     </Container>
   );
 };
