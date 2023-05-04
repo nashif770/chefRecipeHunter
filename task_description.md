@@ -61,12 +61,12 @@ Create a website that shows the recipes of all available chefs. The website must
 
 1. Add at least **two** extra sections on the home page. Make sure the sections are meaningful for the website you are building.
 
-1. When a user clicks on a chef's **View Recipes** button, he/she will be redirected to the **Chef Recipes** page. The *Chef Recipes* page will have the following : 
+<!-- 1. When a user clicks on a chef's **View Recipes** button, he/she will be redirected to the **Chef Recipes** page. The *Chef Recipes* page will have the following : 
 
     -   **Banner** - chef picture, chef name, a short bio/description, likes, number of recipes, and years of experience.
 
     -   Think about a section displaying the information of the selected chef's recipes in a tabular form or in a card group.
-    > Each recipe info should contain the recipe name, ingredients (at least 5), cooking method, rating, and a Favorite button. **Show at least 3 recipes.** for each chef. *If needed, you can have duplicate recipes for each chef* 
+    > Each recipe info should contain the recipe name, ingredients (at least 5), cooking method, rating, and a Favorite button. **Show at least 3 recipes.** for each chef. *If needed, you can have duplicate recipes for each chef*  -->
 
 1. When clicking the Favorite button, show a toast message showing the recipe is your favorite and disable the button. 
 

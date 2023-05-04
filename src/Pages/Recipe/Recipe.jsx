@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
 import RecipeCard from "../Home/RecipeCard/RecipeCard";
+import RecipeCard4Recipe from "../Home/RecipeCard/RecipeCard4Recipe";
 
 const Recipe = () => {
   const recipe = useLoaderData();
@@ -12,10 +13,10 @@ const Recipe = () => {
       {
         <div className="row m-3">
           {recipe.map((eachRecipe) => (
-            <RecipeCard
+            <RecipeCard4Recipe
               key={eachRecipe._id}
               eachRecipe={eachRecipe}
-            ></RecipeCard>
+            ></RecipeCard4Recipe>
           ))}
         </div>
       }
