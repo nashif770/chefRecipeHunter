@@ -10,12 +10,14 @@ const Home = () => {
   const ourChef = useLoaderData();
 
   return (
-    <Container>
+    <Container className="p-3">
       <Row>
-        <Col lg={9}><Banner></Banner></Col>
-        <Col lg={3}>2 of 2</Col>
+        <Col lg={9} md={12}><Banner></Banner></Col>
+        <Col lg={3} md={12}>
+          <h1>Ready to elevate you culinary creations?</h1>
+        </Col>
       </Row>
-        <h3>Chef: {ourChef.length}</h3>
+        <h3 className="text-center mt-3"> Hire a top-rated chef today and experience the difference</h3>
         <div className="row">
           {
             ourChef.map(eachChef=> <FeaturedChef

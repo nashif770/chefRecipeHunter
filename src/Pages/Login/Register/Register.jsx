@@ -23,16 +23,18 @@ const Register = () => {
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
+        setTimeout(() => {
+          userUpdate(name, photo)
+            .then(() => {
+              console.log("profile Updated");
+            })
+            .catch((error) => {
+              // console.log(error);
+            });
+        }, 1000);
       })
       .catch((error) => console.log(error));
 
-    userUpdate(name, photo)
-      .then(() => {
-        console.log("profile Updated");
-      })
-      .catch((error) => {
-        // console.log(error);
-      });
   };
 
   return (
