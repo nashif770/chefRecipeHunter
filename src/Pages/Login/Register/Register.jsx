@@ -6,7 +6,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 const Register = () => {
   const { createUser, userUpdate } = useContext(AuthContext);
   const [accepted, setAccepted] = useState(false);
-
+  const [error, setError] = useState("");
   const handleAccept = (event) => {
     setAccepted(event.target.checked);
   };
@@ -33,8 +33,7 @@ const Register = () => {
             });
         }, 1000);
       })
-      .catch((error) => console.log(error));
-
+      .catch((error) => setError(error.message));
   };
 
   return (
@@ -106,13 +105,11 @@ const Register = () => {
         </Form.Text>
         <br></br>
 
-        <Form.Text className="text-success">
-          We'll never share your email with anyone else.
-        </Form.Text>
-        <br></br>
-        <Form.Text className="text-danger">
-          We'll never share your email with anyone else.
-        </Form.Text>
+        {error && (
+          <Form.Text className="text-danger">
+            Your Password Must be at least 6 characters
+          </Form.Text>
+        )}
       </Form>
     </Container>
   );

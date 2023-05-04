@@ -40,7 +40,6 @@ const NavigationBar = () => {
             <Link
               style={activeTab === "home" ? activeTabStyle : null}
               onClick={() => setActiveTab("home")}
-              activeClassName="active"
               className="mx-3 text-decoration-none text-white"
               to="/"
             >
@@ -49,7 +48,6 @@ const NavigationBar = () => {
             <Link
               style={activeTab === "recipe" ? activeTabStyle : null}
               onClick={() => setActiveTab("recipe")}
-              activeClassName="active"
               className="mx-3 text-decoration-none text-white"
               to="/recipe"
             >
@@ -58,7 +56,6 @@ const NavigationBar = () => {
             <Link
               style={activeTab === "blog" ? activeTabStyle : null}
               onClick={() => setActiveTab("blog")}
-              activeClassName="active"
               className="mx-3 text-decoration-none text-white"
               to="/blog"
             >
@@ -85,7 +82,6 @@ const NavigationBar = () => {
             )}
             {user ? (
               <Link
-                activeClassName="active"
                 className="mx-3 text-decoration-none text-white"
                 to="/login"
               >

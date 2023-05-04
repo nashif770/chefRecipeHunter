@@ -26,9 +26,9 @@ const ChefBanner = () => {
   return (
     <div>
       <div>
-        <h1>name:</h1>
-        <h3>id: </h3>
+        <h1>Chef Name:</h1>
         <h3>Experience: </h3>
+        <h3>Bio: </h3>
         <p></p>
       </div>
       <img className="rounded " src="" alt="" />

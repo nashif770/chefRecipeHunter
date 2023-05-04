@@ -3,7 +3,7 @@ import { Button, Card, Container, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const FeaturedChef = ({ eachChef }) => {
-  const { name, id, num_recipes, picture, years_of_experience } = eachChef;
+  const { name, id, num_recipes, picture, years_of_experience, likes } = eachChef;
 
   return (
     <Container className="col m-3">
@@ -12,7 +12,7 @@ const FeaturedChef = ({ eachChef }) => {
         <Card.Body>
           <div className="d-flex justify-content-between">
           <Card.Title>{name}</Card.Title>
-            <p>Like</p>
+            <p>Likes :{likes}</p>
           </div>
         </Card.Body>
         <ListGroup className="list-group-flush">
