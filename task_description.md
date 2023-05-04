@@ -58,8 +58,8 @@ Create a website that shows the recipes of all available chefs. The website must
     -   Likes
 
     -   View Recipes Button -->
-
-1. Add at least **two** extra sections on the home page. Make sure the sections are meaningful for the website you are building.
+<!-- 
+1. Add at least **two** extra sections on the home page. Make sure the sections are meaningful for the website you are building. -->
 
 <!-- 1. When a user clicks on a chef's **View Recipes** button, he/she will be redirected to the **Chef Recipes** page. The *Chef Recipes* page will have the following : 
 
@@ -68,15 +68,15 @@ Create a website that shows the recipes of all available chefs. The website must
     -   Think about a section displaying the information of the selected chef's recipes in a tabular form or in a card group.
     > Each recipe info should contain the recipe name, ingredients (at least 5), cooking method, rating, and a Favorite button. **Show at least 3 recipes.** for each chef. *If needed, you can have duplicate recipes for each chef*  -->
 
-1. When clicking the Favorite button, show a toast message showing the recipe is your favorite and disable the button. 
+<!-- 1. When clicking the Favorite button, show a toast message showing the recipe is your favorite and disable the button.  -->
 
-2. Show a spinner when the data is in a loading state 
+<!-- 2. Show a spinner when the data is in a loading state  -->
 
-2. Create a 404 page. Add a picture on the 404 page.
+<!-- 2. Create a 404 page. Add a picture on the 404 page. -->
 
-3. Use the Environment variable to hide the Firebase config keys. 
+<!-- 3. Use the Environment variable to hide the Firebase config keys.  -->
 
-4. Add "active route" to indicate the route which you are visiting.
+<!-- 4. Add "active route" to indicate the route which you are visiting. -->
 
 
 ## **Bonus**

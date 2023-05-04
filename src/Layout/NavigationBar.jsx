@@ -1,10 +1,17 @@
 import React, { useContext, useState } from "react";
+import "./NavigationBar.css";
 
 import { Button, Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
+const activeTabStyle = {
+  fontWeight: "bold",
+};
+
 const NavigationBar = () => {
+  const [activeTab, setActiveTab] = useState("tab1");
+
   const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseOver = () => {
@@ -30,19 +37,37 @@ const NavigationBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="d-flex ms-auto align-items-center">
-            <Link className="mx-3 text-decoration-none text-white" to="/">
+            <Link
+              style={activeTab === "home" ? activeTabStyle : null}
+              onClick={() => setActiveTab("home")}
+              activeClassName="active"
+              className="mx-3 text-decoration-none text-white"
+              to="/"
+            >
               Home
             </Link>
-            <Link className="mx-3 text-decoration-none text-white" to="/recipe">
+            <Link
+              style={activeTab === "recipe" ? activeTabStyle : null}
+              onClick={() => setActiveTab("recipe")}
+              activeClassName="active"
+              className="mx-3 text-decoration-none text-white"
+              to="/recipe"
+            >
               Recipe
             </Link>
-            <Link className="mx-3 text-decoration-none text-white" to="/blog">
+            <Link
+              style={activeTab === "blog" ? activeTabStyle : null}
+              onClick={() => setActiveTab("blog")}
+              activeClassName="active"
+              className="mx-3 text-decoration-none text-white"
+              to="/blog"
+            >
               Blog
             </Link>
             {user && (
               <div>
                 {isHovering && (
-                  <Link 
+                  <Link
                     className="mx-3 text-decoration-none text-red"
                     to="#memes"
                   >
@@ -60,6 +85,7 @@ const NavigationBar = () => {
             )}
             {user ? (
               <Link
+                activeClassName="active"
                 className="mx-3 text-decoration-none text-white"
                 to="/login"
               >

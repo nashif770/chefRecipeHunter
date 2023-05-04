@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import FeaturedChef from "../FeaturedChef/FeaturedChef";
 import { useLoaderData } from "react-router-dom";
 import Hiring from "../Hiring/Hiring";
+import HireUs from "../HireUs/HireUs";
 
 const Home = () => {
 
@@ -27,6 +28,7 @@ const Home = () => {
             ></FeaturedChef>)
           }
         </div>
+        <HireUs></HireUs>
         <Hiring></Hiring>
     </Container>
   );

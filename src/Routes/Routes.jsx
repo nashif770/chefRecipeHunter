@@ -8,6 +8,7 @@ import Register from "../Pages/Login/Register/Register";
 import ChefRecipe from "../Pages/Home/ChefRecipe/ChefRecipe";
 import PrivateRoute from "./PrivateRoute";
 import Terms from "../Pages/Login/Register/Terms";
+import Error from "../Pages/Home/Error/Error";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("https://chef-recipe-server-nashif770.vercel.app/chef"),
+        errorElement: <Error></Error>
       },
       {
         path: "/login",
@@ -55,6 +57,7 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
     ],
+    errorElement:<Error></Error>
   },
 ]);
 
